@@ -69,7 +69,7 @@ export function buildMusicPage(baseUrl: string) {
           props: { label: 'Support', icon: 'heart' as const },
           on: {
             press: {
-              action: 'open_mini_app' as const,
+              action: 'open_url' as const,
               params: { target: 'https://farcaster.xyz/miniapps/qdooGiOr3FGt/do-d-at-farcon-rome' },
             },
           },

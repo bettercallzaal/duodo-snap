@@ -8,7 +8,7 @@ export function buildHomePage(baseUrl: string) {
         page: {
           type: 'stack' as const,
           props: { direction: 'vertical' as const, gap: 'md' as const },
-          children: ['title', 'subtitle', 'desc', 'divider', 'farcon_item', 'fundraiser', 'btn_row_1', 'btn_row_2'],
+          children: ['title', 'subtitle', 'desc', 'divider', 'farcon_item', 'fundraiser', 'fund_progress', 'btn_row_1', 'btn_row_2', 'btn_row_3'],
         },
         title: {
           type: 'text' as const,
@@ -20,7 +20,7 @@ export function buildHomePage(baseUrl: string) {
         },
         desc: {
           type: 'text' as const,
-          props: { content: 'From Buenos Aires to Rome - Duo Do is creating original music on Farcaster with Tortoise. Become an Executive Producer and support their journey.', size: 'sm' as const },
+          props: { content: 'From Buenos Aires to Rome - creating original music on Farcaster with Tortoise. Become an Executive Producer and support their journey.', size: 'sm' as const },
         },
         divider: {
           type: 'separator' as const,
@@ -44,6 +44,10 @@ export function buildHomePage(baseUrl: string) {
           type: 'badge' as const,
           props: { label: '73% funded', color: 'green' as const },
         },
+        fund_progress: {
+          type: 'progress' as const,
+          props: { value: 2183, max: 3000, label: '$2,183 of $3,000' },
+        },
         btn_row_1: {
           type: 'stack' as const,
           props: { direction: 'horizontal' as const, gap: 'sm' as const },
@@ -52,14 +56,19 @@ export function buildHomePage(baseUrl: string) {
         btn_row_2: {
           type: 'stack' as const,
           props: { direction: 'horizontal' as const, gap: 'sm' as const },
-          children: ['profile_btn', 'share_btn'],
+          children: ['duodo_btn', 'santiago_btn'],
+        },
+        btn_row_3: {
+          type: 'stack' as const,
+          props: { direction: 'horizontal' as const, gap: 'sm' as const },
+          children: ['share_btn'],
         },
         support_btn: {
           type: 'button' as const,
           props: { label: 'Become a Producer', variant: 'primary' as const, icon: 'heart' as const },
           on: {
             press: {
-              action: 'open_mini_app' as const,
+              action: 'open_url' as const,
               params: { target: 'https://farcaster.xyz/miniapps/qdooGiOr3FGt/do-d-at-farcon-rome' },
             },
           },
@@ -74,9 +83,9 @@ export function buildHomePage(baseUrl: string) {
             },
           },
         },
-        profile_btn: {
+        duodo_btn: {
           type: 'button' as const,
-          props: { label: 'Duo Do', icon: 'user' as const },
+          props: { label: '@duodomusica', icon: 'user' as const },
           on: {
             press: {
               action: 'view_profile' as const,
@@ -84,9 +93,19 @@ export function buildHomePage(baseUrl: string) {
             },
           },
         },
+        santiago_btn: {
+          type: 'button' as const,
+          props: { label: '@estudioborges', icon: 'user' as const },
+          on: {
+            press: {
+              action: 'open_url' as const,
+              params: { target: 'https://farcaster.xyz/estudioborges' },
+            },
+          },
+        },
         share_btn: {
           type: 'button' as const,
-          props: { label: 'Share', icon: 'share' as const },
+          props: { label: 'Share in Feed', icon: 'share' as const },
           on: {
             press: {
               action: 'compose_cast' as const,
