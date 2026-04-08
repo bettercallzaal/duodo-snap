@@ -80,7 +80,7 @@ export function buildHomePage(baseUrl: string) {
           on: {
             press: {
               action: 'view_profile' as const,
-              params: { fid: 873941 },
+              params: { fid: 355566 },
             },
           },
         },
