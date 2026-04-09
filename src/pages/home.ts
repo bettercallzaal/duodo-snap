@@ -13,8 +13,8 @@ export function buildHomePage(baseUrl: string) {
         info: {
           type: 'item' as const,
           props: {
-            title: 'Duo Do - Road to FarCon Rome',
-            description: '$2,183 / $3,000 raised - 47 Producers',
+            title: 'Duo Do at FarCon Rome',
+            description: '$2,183 / $3,000 raised',
           },
           children: ['badge'],
         },
