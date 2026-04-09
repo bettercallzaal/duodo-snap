@@ -59,8 +59,8 @@ export function buildMusicPage(baseUrl: string) {
           props: { label: 'Listen on Tortoise', variant: 'primary' as const, icon: 'music' as const },
           on: {
             press: {
-              action: 'open_url' as const,
-              params: { target: 'https://tortoise.studio/?id=12f56c82-107b-46f3-93b7-8ba09cd99020' },
+              action: 'open_mini_app' as const,
+              params: { target: 'https://farcaster.xyz/miniapps/Pzx-twnnCA17/tortoise' },
             },
           },
         },
@@ -69,7 +69,7 @@ export function buildMusicPage(baseUrl: string) {
           props: { label: 'Support', icon: 'heart' as const },
           on: {
             press: {
-              action: 'open_url' as const,
+              action: 'open_mini_app' as const,
               params: { target: 'https://farcaster.xyz/miniapps/qdooGiOr3FGt/do-d-at-farcon-rome' },
             },
           },
@@ -92,7 +92,7 @@ export function buildMusicPage(baseUrl: string) {
               action: 'compose_cast' as const,
               params: {
                 text: 'Check out @duodomusica on Tortoise! New original song premiering at FarCon Rome 2026',
-                embeds: ['https://tortoise.studio/?id=12f56c82-107b-46f3-93b7-8ba09cd99020', baseUrl],
+                embeds: ['https://farcaster.xyz/miniapps/Pzx-twnnCA17/tortoise', baseUrl],
               },
             },
           },

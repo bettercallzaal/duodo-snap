@@ -61,7 +61,7 @@ export function buildHomePage(baseUrl: string) {
           props: { label: 'Support', variant: 'primary' as const, icon: 'heart' as const },
           on: {
             press: {
-              action: 'open_url' as const,
+              action: 'open_mini_app' as const,
               params: { target: 'https://farcaster.xyz/miniapps/qdooGiOr3FGt/do-d-at-farcon-rome' },
             },
           },
@@ -71,8 +71,8 @@ export function buildHomePage(baseUrl: string) {
           props: { label: 'Listen', icon: 'music' as const },
           on: {
             press: {
-              action: 'open_url' as const,
-              params: { target: 'https://tortoise.studio/?id=12f56c82-107b-46f3-93b7-8ba09cd99020' },
+              action: 'open_mini_app' as const,
+              params: { target: 'https://farcaster.xyz/miniapps/Pzx-twnnCA17/tortoise' },
             },
           },
         },
