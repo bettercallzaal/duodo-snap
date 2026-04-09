@@ -7,44 +7,29 @@ export function buildHomePage(baseUrl: string) {
       elements: {
         page: {
           type: 'stack' as const,
-          props: { direction: 'vertical' as const, gap: 'sm' as const },
-          children: ['title', 'farcon_item', 'fundraiser', 'fund_progress', 'btn_row_1', 'btn_row_2'],
+          props: {},
+          children: ['info', 'progress', 'buttons'],
         },
-        title: {
-          type: 'text' as const,
-          props: { content: 'Have You Heard of Duo Do?', weight: 'bold' as const },
-        },
-        farcon_item: {
+        info: {
           type: 'item' as const,
-          props: { title: 'Road to FarCon Rome', description: 'Buenos Aires to Rome - live at Kismet Casa' },
-          children: ['live_badge'],
+          props: {
+            title: 'Duo Do - Road to FarCon Rome',
+            description: '$2,183 / $3,000 raised - 47 Executive Producers',
+          },
+          children: ['badge'],
         },
-        live_badge: {
-          type: 'badge' as const,
-          props: { label: 'FarCon 2026', color: 'purple' as const },
-        },
-        fundraiser: {
-          type: 'item' as const,
-          props: { title: '$2,183 / $3,000 raised', description: '47 Executive Producers' },
-          children: ['fund_badge'],
-        },
-        fund_badge: {
+        badge: {
           type: 'badge' as const,
           props: { label: '73%', color: 'green' as const },
         },
-        fund_progress: {
+        progress: {
           type: 'progress' as const,
-          props: { value: 2183, max: 3000, label: '$2,183 of $3,000' },
+          props: { value: 73, max: 100, label: 'Fundraiser progress' },
         },
-        btn_row_1: {
+        buttons: {
           type: 'stack' as const,
-          props: { direction: 'horizontal' as const, gap: 'sm' as const },
-          children: ['support_btn', 'music_btn', 'share_btn'],
-        },
-        btn_row_2: {
-          type: 'stack' as const,
-          props: { direction: 'horizontal' as const, gap: 'sm' as const },
-          children: ['duodo_btn', 'santiago_btn'],
+          props: { direction: 'horizontal' as const },
+          children: ['support_btn', 'listen_btn', 'share_btn'],
         },
         support_btn: {
           type: 'button' as const,
@@ -56,13 +41,13 @@ export function buildHomePage(baseUrl: string) {
             },
           },
         },
-        music_btn: {
+        listen_btn: {
           type: 'button' as const,
           props: { label: 'Listen', icon: 'music' as const },
           on: {
             press: {
-              action: 'submit' as const,
-              params: { target: `${baseUrl}/music` },
+              action: 'open_url' as const,
+              params: { target: 'https://tortoise.studio/?id=12f56c82-107b-46f3-93b7-8ba09cd99020' },
             },
           },
         },
@@ -73,29 +58,9 @@ export function buildHomePage(baseUrl: string) {
             press: {
               action: 'compose_cast' as const,
               params: {
-                text: 'Have you heard of @duodomusica? Performing live at FarCon Rome 2026. Become an Executive Producer!',
-                embeds: [baseUrl, 'https://farcaster.xyz/miniapps/qdooGiOr3FGt/do-d-at-farcon-rome'],
+                text: 'Have you heard of @duodomusica? Performing live at FarCon Rome 2026!',
+                embeds: ['https://farcaster.xyz/miniapps/qdooGiOr3FGt/do-d-at-farcon-rome'],
               },
-            },
-          },
-        },
-        duodo_btn: {
-          type: 'button' as const,
-          props: { label: '@duodomusica', icon: 'user' as const },
-          on: {
-            press: {
-              action: 'view_profile' as const,
-              params: { fid: 355566 },
-            },
-          },
-        },
-        santiago_btn: {
-          type: 'button' as const,
-          props: { label: '@estudioborges', icon: 'user' as const },
-          on: {
-            press: {
-              action: 'open_url' as const,
-              params: { target: 'https://farcaster.xyz/estudioborges' },
             },
           },
         },
