@@ -8,19 +8,44 @@ export function buildHomePage(baseUrl: string) {
         page: {
           type: 'stack' as const,
           props: {},
-          children: ['info', 'progress', 'buttons'],
+          children: ['info', 'artists', 'progress', 'buttons'],
         },
         info: {
           type: 'item' as const,
           props: {
             title: 'Duo Do - Road to FarCon Rome',
-            description: '$2,183 / $3,000 raised - 47 Executive Producers',
+            description: '$2,183 / $3,000 raised - 47 Producers',
           },
           children: ['badge'],
         },
         badge: {
           type: 'badge' as const,
           props: { label: '73%', color: 'green' as const },
+        },
+        artists: {
+          type: 'stack' as const,
+          props: { direction: 'horizontal' as const, gap: 'sm' as const },
+          children: ['duodo_btn', 'santiago_btn'],
+        },
+        duodo_btn: {
+          type: 'button' as const,
+          props: { label: '@duodomusica', icon: 'user' as const },
+          on: {
+            press: {
+              action: 'view_profile' as const,
+              params: { fid: 355566 },
+            },
+          },
+        },
+        santiago_btn: {
+          type: 'button' as const,
+          props: { label: '@estudioborges', icon: 'user' as const },
+          on: {
+            press: {
+              action: 'open_url' as const,
+              params: { target: 'https://farcaster.xyz/estudioborges' },
+            },
+          },
         },
         progress: {
           type: 'progress' as const,
