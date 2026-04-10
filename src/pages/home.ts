@@ -14,13 +14,13 @@ export function buildHomePage(baseUrl: string) {
           type: 'item' as const,
           props: {
             title: 'Duo Do at FarCon Rome',
-            description: '$2,183 / $3,000 raised',
+            description: '$3,000 / $3,000 raised - Goal reached!',
           },
           children: ['badge'],
         },
         badge: {
           type: 'badge' as const,
-          props: { label: '73%', color: 'green' as const },
+          props: { label: '100%', color: 'green' as const },
         },
         artists: {
           type: 'stack' as const,
@@ -49,7 +49,7 @@ export function buildHomePage(baseUrl: string) {
         },
         progress: {
           type: 'progress' as const,
-          props: { value: 73, max: 100, label: 'Fundraiser progress' },
+          props: { value: 100, max: 100, label: 'Goal reached!' },
         },
         event_info: {
           type: 'item' as const,
