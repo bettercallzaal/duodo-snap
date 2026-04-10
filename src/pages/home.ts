@@ -8,7 +8,7 @@ export function buildHomePage(baseUrl: string) {
         page: {
           type: 'stack' as const,
           props: {},
-          children: ['info', 'artists', 'progress', 'buttons'],
+          children: ['info', 'artists', 'progress', 'event_info', 'buttons', 'nav_row'],
         },
         info: {
           type: 'item' as const,
@@ -51,10 +51,37 @@ export function buildHomePage(baseUrl: string) {
           type: 'progress' as const,
           props: { value: 73, max: 100, label: 'Fundraiser progress' },
         },
+        event_info: {
+          type: 'item' as const,
+          props: {
+            title: 'Live at FarCon Rome 2026',
+            description: 'Original music premiering on stage - support the journey',
+          },
+          children: ['event_badge'],
+        },
+        event_badge: {
+          type: 'badge' as const,
+          props: { label: 'FarCon', color: 'purple' as const },
+        },
         buttons: {
           type: 'stack' as const,
           props: { direction: 'horizontal' as const },
           children: ['support_btn', 'listen_btn', 'share_btn'],
+        },
+        nav_row: {
+          type: 'stack' as const,
+          props: { direction: 'horizontal' as const },
+          children: ['music_btn'],
+        },
+        music_btn: {
+          type: 'button' as const,
+          props: { label: 'Music', icon: 'music' as const },
+          on: {
+            press: {
+              action: 'submit' as const,
+              params: { target: `${baseUrl}/music` },
+            },
+          },
         },
         support_btn: {
           type: 'button' as const,
@@ -83,7 +110,7 @@ export function buildHomePage(baseUrl: string) {
             press: {
               action: 'compose_cast' as const,
               params: {
-                text: 'Have you heard of @duodomusica? Performing live at FarCon Rome 2026!',
+                text: 'Have you heard of @duodomusica and @estudioborges? Performing live at FarCon Rome 2026! Support their journey',
                 embeds: ['https://farcaster.xyz/miniapps/qdooGiOr3FGt/do-d-at-farcon-rome'],
               },
             },

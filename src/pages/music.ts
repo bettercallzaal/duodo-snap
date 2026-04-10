@@ -91,7 +91,7 @@ export function buildMusicPage(baseUrl: string) {
             press: {
               action: 'compose_cast' as const,
               params: {
-                text: 'Check out @duodomusica on Tortoise! New original song premiering at FarCon Rome 2026',
+                text: 'Check out @duodomusica and @estudioborges on Tortoise! New original song premiering at FarCon Rome 2026. Support their journey',
                 embeds: ['https://farcaster.xyz/miniapps/Pzx-twnnCA17/tortoise', baseUrl],
               },
             },
