@@ -56,7 +56,7 @@ export function buildMusicPage(baseUrl: string) {
         },
         listen_btn: {
           type: 'button' as const,
-          props: { label: 'Listen on Tortoise', variant: 'primary' as const, icon: 'music' as const },
+          props: { label: 'Listen', variant: 'primary' as const, icon: 'music' as const },
           on: {
             press: {
               action: 'open_mini_app' as const,

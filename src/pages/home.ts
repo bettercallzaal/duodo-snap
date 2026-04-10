@@ -8,7 +8,7 @@ export function buildHomePage(baseUrl: string) {
         page: {
           type: 'stack' as const,
           props: {},
-          children: ['info', 'artists', 'progress', 'event_info', 'buttons', 'nav_row'],
+          children: ['info', 'artists', 'progress', 'event_info', 'btn_row_1', 'btn_row_2'],
         },
         info: {
           type: 'item' as const,
@@ -63,15 +63,15 @@ export function buildHomePage(baseUrl: string) {
           type: 'badge' as const,
           props: { label: 'FarCon', color: 'purple' as const },
         },
-        buttons: {
+        btn_row_1: {
           type: 'stack' as const,
-          props: { direction: 'horizontal' as const },
-          children: ['support_btn', 'listen_btn', 'share_btn'],
+          props: { direction: 'horizontal' as const, gap: 'sm' as const },
+          children: ['support_btn', 'listen_btn'],
         },
-        nav_row: {
+        btn_row_2: {
           type: 'stack' as const,
-          props: { direction: 'horizontal' as const },
-          children: ['music_btn'],
+          props: { direction: 'horizontal' as const, gap: 'sm' as const },
+          children: ['music_btn', 'share_btn'],
         },
         music_btn: {
           type: 'button' as const,
